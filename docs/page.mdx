@@ -1,0 +1,535 @@
+# 🛒 KafKart - Complete Project Documentation
+
+> **A modern, microservices-based e-commerce platform built with Next.js 16 and enterprise-grade architecture**
+
+**Project Name:** KafKart
+**Framework:** Next.js 16.0.0
+**Architecture:** Microservices with Turborepo
+**Developer:** Arifur Rahman ([@moarifur](https://github.com/moarifur))
+**Repository:** [github.com/moarifur/kafkart](https://github.com/moarifur/kafkart)
+**Last Updated:** October 23, 2025
+
+---
+
+## 📋 Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Key Features](#key-features)
+3. [Technology Stack](#technology-stack)
+4. [System Architecture](#system-architecture)
+5. [Project Structure](#project-structure)
+6. [Setup & Installation](#setup--installation)
+7. [Development Workflow](#development-workflow)
+8. [Git History](#git-history)
+9. [API Documentation](#api-documentation)
+10. [Deployment Guide](#deployment-guide)
+11. [Next Steps & Roadmap](#next-steps--roadmap)
+12. [Resources](#resources)
+
+---
+
+## 🎯 Project Overview
+
+**KafKart** is a full-featured, scalable e-commerce platform demonstrating modern software architecture principles. Built with Next.js 16 for the frontend and a Turborepo-managed microservices backend, it showcases enterprise-grade patterns including event-driven architecture with Kafka, payment processing with Stripe, and role-based access control.
+
+### Project Goals
+
+- **Scalability**: Microservices architecture allowing independent service scaling
+- **Modern Stack**: Leveraging latest React 19, Next.js 16, and cutting-edge tools
+- **Real-world Patterns**: Implementing production-ready e-commerce workflows
+- **Developer Experience**: Monorepo structure with shared packages and consistent patterns
+- **Performance**: Optimized rendering with Turbopack and efficient state management
+
+### Use Cases
+
+- Full-featured online store with product catalog
+- Multi-role admin dashboard for business operations
+- Event-driven order processing and payment workflows
+- Scalable microservices template for other projects
+
+---
+
+## ✨ Key Features
+
+### 🛍️ E-Commerce Storefront
+
+#### Customer Experience
+- **Responsive Design**: Mobile-first approach with Tailwind CSS ensuring seamless experience across all devices
+- **Dynamic Product Catalog**:
+- Category-based browsing with filtering and sorting
+- Advanced search functionality
+- Pagination for large inventories
+- **Interactive Product Pages**:
+- Real-time image gallery with zoom
+- Color/size variant selection
+- Product recommendations
+- Customer reviews and ratings
+- **Smart Shopping Cart**:
+- Zustand-powered global state management
+- Persistent cart across sessions
+- Real-time price calculations
+- Quantity adjustments and item removal
+- **Checkout Flow**:
+- Multi-step checkout process
+- Address validation and management
+- Multiple payment options via Stripe
+- Order confirmation and tracking
+
+#### Technical Features
+- **SEO Optimized**:
+- Dynamic meta tags for all pages
+- Structured data for products
+- Server-side rendering for better indexing
+- **Performance**:
+- Image optimization with Next.js Image
+- Code splitting and lazy loading
+- Turbopack for faster development builds
+- **State Management**:
+- Zustand for cart and user preferences
+- Proper hydration handling for SSR
+
+### 🧑‍💼 Admin Dashboard
+
+#### Management Capabilities
+- **Product Management**:
+- Create, read, update, delete (CRUD) operations
+- Bulk operations for efficiency
+- Image upload and management
+- Inventory tracking
+- Category and tag management
+- **Order Management**:
+- Real-time order tracking
+- Order status updates
+- Fulfillment workflows
+- Returns and refunds processing
+- **User Management**:
+- Customer data overview
+- Role assignment (Admin, Staff, Customer)
+- Activity logs and analytics
+- **Analytics Dashboard**:
+- Sales reports and visualizations
+- Revenue tracking
+- Customer analytics
+- Product performance metrics
+
+#### UI Components
+- **Data Tables**: React Table integration for sortable, filterable data grids
+- **Charts**: Visual analytics with Chart.js or Recharts
+- **Forms**: Validated forms using React Hook Form + Zod
+- **Role-Based Access Control**: Different views and permissions based on user roles
+
+### 🧱 Backend Microservices
+
+#### Service Architecture
+1. **Product Service**:
+- Product catalog management
+- Inventory tracking
+- Category and attribute management
+- Search and filtering APIs
+
+2. **Order Service**:
+- Order creation and processing
+- Order status management
+- Integration with payment and email services
+- Order history and tracking
+
+3. **Payment Service**:
+- Stripe integration for payment processing
+- Webhook handling for payment events
+- Transaction logging
+- Refund management
+- Kafka events for payment status updates
+
+4. **Authentication Service**:
+- JWT-based authentication
+- User registration and login
+- Role-Based Access Control (RBAC)
+- Password reset and email verification
+- Session management
+
+5. **Email Service**:
+- Nodemailer integration
+- Event-driven email triggers via Kafka
+- Email templates for:
+- Order confirmations
+- Shipping notifications
+- Password resets
+- Marketing communications
+
+#### Shared Packages
+- **Database Package**: Shared Prisma schema and client
+- **Types Package**: TypeScript/JSDoc type definitions
+- **Utils Package**: Common helper functions and utilities
+- **Config Package**: Shared environment and configuration management
+
+### ⚙️ Core Architecture Features
+
+#### Communication & Events
+- **Kafka Integration**:
+- Asynchronous service communication
+- Event sourcing for audit trails
+- Reliable message delivery
+- Topic-based event routing
+
+#### Data Layer
+- **Hybrid Database Strategy**:
+- PostgreSQL for relational data (products, orders, users)
+- MongoDB for flexible schemas (logs, analytics)
+- **Prisma ORM**: Type-safe database access with migrations
+
+#### Development Infrastructure
+- **Turborepo**: Efficient monorepo management with:
+- Shared caching
+- Parallel execution
+- Dependency graph optimization
+- Consistent build pipeline
+- **Environment Management**: Centralized `.env` configuration
+- **API Consistency**: RESTful standards across all services
+
+### 🔐 Security & Reliability
+
+- **Authentication**: JWT tokens with refresh mechanism
+- **Authorization**: Role-based access control (RBAC)
+- **Validation**:
+- Input validation with Zod schemas
+- Prisma schema constraints
+- XSS and injection prevention
+- **Error Handling**: Centralized error handling and logging
+- **Rate Limiting**: API rate limits to prevent abuse
+- **Secure Payments**: PCI-compliant through Stripe
+
+### 🔄 Planned Enhancements
+
+- **Real-time Features**:
+- Live order tracking with WebSocket
+- Real-time inventory updates
+- Live chat support
+- **AI Integration**:
+- Smart product recommendations
+- Predictive inventory management
+- Customer behavior analysis
+- **Advanced Features**:
+- Multi-vendor marketplace support
+- Warehouse management system
+- Logistics service integration
+- Mobile app (React Native)
+- **Internationalization**: Multi-language and multi-currency support
+
+---
+
+## 🛠 Technology Stack
+
+### Frontend Technologies
+
+| Technology | Version | Purpose | Key Features |
+|------------|---------|---------|--------------|
+| **Next.js** | 16.0.0 | React framework | App Router, Server Components, SSR/SSG |
+| **React** | 19.0.0 | UI library | Concurrent rendering, Suspense, Server Components |
+| **Tailwind CSS** | 4.x | Styling framework | Utility-first, responsive design, dark mode |
+| **Zustand** | Latest | State management | Minimal API, no boilerplate, persistence middleware |
+| **React Hook Form** | Latest | Form handling | Performance optimization, validation integration |
+| **Zod** | Latest | Schema validation | Type-safe validation, form integration |
+| **ShadCN UI** | Latest | UI components | Accessible, customizable, Radix UI based |
+
+### Backend Technologies
+
+| Technology | Version | Purpose | Key Features |
+|------------|---------|---------|--------------|
+| **Turborepo** | Latest | Monorepo management | Caching, parallel execution, dependency management |
+| **Express.js** | Latest | API framework | Middleware, routing, REST APIs |
+| **Fastify** | Latest | Alternative API framework | High performance, schema validation |
+| **Hono** | Latest | Edge-compatible framework | Lightweight, TypeScript-first |
+| **Prisma** | Latest | ORM | Type-safe queries, migrations, multi-database |
+| **Kafka.js** | Latest | Message broker | Event streaming, pub/sub, reliable messaging |
+| **Stripe** | Latest | Payment processing | Checkout, webhooks, subscriptions |
+| **Nodemailer** | Latest | Email service | SMTP, templates, attachments |
+
+### Database & Storage
+
+| Technology | Purpose | Use Cases |
+|------------|---------|-----------|
+| **PostgreSQL** | Primary database | Products, orders, users, transactions |
+| **MongoDB** | Secondary database | Logs, analytics, flexible schemas |
+| **Redis** (Planned) | Caching layer | Session storage, rate limiting, caching |
+
+### Development & Deployment
+
+| Technology | Purpose |
+|------------|---------|
+| **Turbopack** | Fast development builds |
+| **Git** | Version control |
+| **Vercel** | Frontend deployment |
+| **Render/Railway** | Backend deployment |
+| **Docker** (Planned) | Containerization |
+| **GitHub Actions** (Planned) | CI/CD pipeline |
+
+### Configuration Choices
+
+**Next.js Setup Configuration:**
+- ✅ TypeScript: No (JavaScript ES6+ with JSDoc)
+- ✅ ESLint: Disabled (configured later if needed)
+- ✅ Tailwind CSS: Yes
+- ✅ `src/` directory: Yes (better organization)
+- ✅ App Router: Yes (recommended modern approach)
+- ✅ Turbopack: Yes (faster than Webpack)
+- ✅ Import alias: `@/*` (default)
+
+**Rationale:**
+- **JavaScript over TypeScript**: Faster prototyping, less boilerplate for MVP
+- **No linter initially**: Focus on functionality first, can add later
+- **App Router**: Future-proof with Server Components and improved performance
+- **Turbopack**: Significantly faster development builds
+
+---
+
+## 🏗 System Architecture
+
+### High-Level Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                         Frontend Layer                       │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │           Next.js 16 Application (Vercel)            │  │
+│  │                                                        │  │
+│  │  ├─ (store)  → Storefront (Customer-facing)         │  │
+│  │  ├─ (admin)  → Dashboard (Admin/Staff)              │  │
+│  │  └─ API Routes → Backend communication              │  │
+│  └──────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              │ REST APIs
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      API Gateway Layer                       │
+│                    (Load Balancer / Nginx)                   │
+└─────────────────────────────────────────────────────────────┘
+                              │
+            ┌─────────────────┼─────────────────┐
+            │                 │                 │
+            ▼                 ▼                 ▼
+┌───────────────────┐ ┌──────────────┐ ┌──────────────┐
+│  Product Service  │ │ Order Service│ │ Auth Service │
+│   (Express.js)    │ │  (Fastify)   │ │    (Hono)    │
+│                   │ │              │ │              │
+│  - CRUD Products  │ │ - Orders     │ │ - JWT Auth   │
+│  - Inventory      │ │ - Checkout   │ │ - RBAC       │
+│  - Categories     │ │ - Tracking   │ │ - Sessions   │
+└─────────┬─────────┘ └──────┬───────┘ └──────┬───────┘
+          │                  │                 │
+          └──────────────────┼─────────────────┘
+                             │
+                             ▼
+              ┌──────────────────────────┐
+              │     Kafka Message Bus    │
+              │                          │
+              │  Topics:                 │
+              │  - order.created         │
+              │  - payment.processed     │
+              │  - email.send            │
+              └────────────┬─────────────┘
+                           │
+            ┌──────────────┼──────────────┐
+            │              │              │
+            ▼              ▼              ▼
+┌──────────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Payment Service  │ │Email Service│ │  Analytics  │
+│   (Stripe SDK)   │ │(Nodemailer) │ │  Service    │
+│                  │ │             │ │  (Planned)  │
+│ - Checkout       │ │ - Templates │ │             │
+│ - Webhooks       │ │ - Triggers  │ │             │
+│ - Refunds        │ │ - Logs      │ │             │
+└──────────────────┘ └─────────────┘ └─────────────┘
+            │
+            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       Data Layer                             │
+│                                                               │
+│  ┌──────────────────┐        ┌──────────────────┐          │
+│  │   PostgreSQL     │        │     MongoDB      │          │
+│  │                  │        │                  │          │
+│  │ - Products       │        │ - Logs           │          │
+│  │ - Orders         │        │ - Analytics      │          │
+│  │ - Users          │        │ - Sessions       │          │
+│  │ - Payments       │        │                  │          │
+│  └──────────────────┘        └──────────────────┘          │
+│                                                               │
+│              Managed via Prisma ORM                          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Service Communication Flow
+
+**Example: Order Creation Flow**
+
+1. **Customer** submits order via storefront
+2. **Next.js API** receives request
+3. **Order Service** creates order in database
+4. **Kafka** publishes `order.created` event
+5. **Payment Service** consumes event, processes payment
+6. **Payment Service** publishes `payment.processed` event
+7. **Order Service** updates order status
+8. **Email Service** consumes event, sends confirmation email
+9. **Frontend** receives success response
+
+### Turborepo Structure
+
+```
+kafkart/
+├── apps/
+│   ├── web/                      # Next.js frontend
+│   ├── services/
+│   │   ├── product/              # Product microservice
+│   │   ├── order/                # Order microservice
+│   │   ├── payment/              # Payment service
+│   │   ├── auth/                 # Authentication service
+│   │   └── email/                # Nodemailer-based email service
+│   └── shared/
+│       ├── db/                   # Shared Prisma schema
+│       ├── types/                # Shared TypeScript types
+│       └── utils/                # Shared helpers
+├── src/
+│   ├── app/
+│   │   ├── (store)/              # Storefront pages
+│   │   ├── (admin)/              # Admin dashboard
+│   │   ├── globals.css
+│   │   └── layout.js
+│   ├── components/
+│   │   ├── ui/                   # ShadCN components
+│   │   ├── cart/
+│   │   ├── product/
+│   │   └── admin/
+│   ├── lib/
+│   │   ├── zustand/
+│   │   ├── hooks/
+│   │   └── utils.js
+│   └── docs/
+│       └── page.mdx
+├── package.json
+├── turbo.json
+├── tailwind.config.js
+├── prisma/
+│   └── schema.prisma
+├── .env
+└── README.md
+```
+
+---
+
+### Key Directory Explanations
+
+**`/apps/web`**: Complete Next.js application with App Router structure
+- Grouped routes using `(store)` and `(admin)` for different layouts
+- API routes for backend communication
+- Component library organized by feature
+- Zustand stores for global state
+
+**`/apps/services`**: Independent microservices
+- Each service is self-contained with its own dependencies
+- Follows MVC/controller pattern
+- Kafka integration for event-driven communication
+- Environment-specific configurations
+
+---
+
+## 🚀 Setup & Installation
+
+### Step 01(Prerequisites): Verify Node.js Environment
+
+Ensure you have the following installed on your system:
+
+```bash
+# Check Node.js (v18+ recommended)
+node -v  # Should output v18.x.x or higher
+
+# Check npm
+npm -v   # Should output 9.x.x or higher
+
+# Check npx (usually comes with npm)
+npx -v
+```
+
+### Step 02: Initialize Project
+
+Install the latest Next.js on your system
+
+**Required Software:**
+- Node.js: v18.0.0 or higher
+- npm: v9.0.0 or higher
+- Git: v2.30.0 or higher
+- PostgreSQL: v14+ (for development)
+- MongoDB: v6+ (for development)
+- Kafka: Local or cloud instance
+
+```bash
+# Check Node.js (v18+ recommended)
+npx create-next-app@latest kafkart
+```
+
+**Configuration Prompts:**
+- TypeScript: **No**
+- Linter: **No**
+- Tailwind CSS: **Yes**
+- App Router: **Yes**
+- Turbopack: **Yes**
+- Custom alias: **No**
+
+### Step 3: Clean Boilerplate
+
+**Checklist:**
+- ✅ Cleaned `/public` directory
+- ✅ Replaced favicon
+- ✅ Reset `globals.css` (only Tailwind imports)
+- ✅ Removed default Next.js code
+- ✅ Created `src/app/(store)/page.jsx` for storefront
+- ✅ Created `src/app/(admin)/page.jsx` for dashboard
+
+### Step 4: Git Setup
+
+```bash
+git init
+git add .
+git commit -m "Initial clean setup for KafKart"
+git branch -M main
+git remote add origin https://github.com/moarifur/kafkart.git
+git push -u origin main
+```
+
+### Step 5: Install Dependencies
+
+```bash
+npm install zustand react-hook-form zod @hookform/resolvers shadcn-ui class-variance-authority tailwind-variants
+```
+
+---
+
+## 💻 Development Commands
+
+```bash
+# Start Next.js frontend
+npm run dev
+
+# Build for production
+npm run build
+
+# Run Turborepo backend
+npm run turbo
+
+# Start all microservices
+turbo run dev --parallel
+```
+
+---
+
+## 📝 Git History
+
+### Commits
+
+1. **"Initial clean setup for KafKart"** – Removed boilerplate
+2. **"Setup Tailwind + Zustand + ShadCN"** – Installed and configured dependencies
+3. **"Created Turborepo structure with services"** – Added microservice architecture
+4. **"Integrated Kafka and Stripe"** – Payment and message system setup
+5. **"Added Admin Dashboard + CRUD features"** – Completed core backend logic
+
+---
