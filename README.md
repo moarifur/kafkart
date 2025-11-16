@@ -1,55 +1,121 @@
-# 🛒 KafKart - E-Commerce Platform
+# 🛒 KafKart – Modern E-Commerce Platform
 
-**Project Status:** 🚧 In Development  
-**Framework:** Next.js 16.0.0  
-**Last Updated:** October 23, 2025
+<p align="center">
+  <img src="https://raw.githubusercontent.com/moarifur/kafkart/main/public/favicon.ico" width="120" alt="KafKart Logo" />
+</p>
 
----
+<p align="center">
+  <strong>A full-featured e-commerce platform built with Next.js 15 and modern web technologies</strong>
+</p>
 
-## 📋 What is KafKart?
-
-KafKart is an e-commerce platform project that will be built with modern web technologies. This is the initial setup and foundation phase.
-
----
-
-## 🛠 Current Tech Stack
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Next.js | 16.0.0 | React framework with App Router |
-| React | 19.0.0 | UI library |
-| Tailwind CSS | 4.x | Styling framework |
-| ShadCN UI | 3.4.2 | UI component library |
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15.5.6-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.x-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/Status-In_Development-yellow?style=for-the-badge" alt="Status" />
+</p>
 
 ---
 
-## 📁 Current Project Structure
+## 📑 Table of Contents
+
+- [📦 Overview](#-overview)
+- [✨ Features](#-features)
+- [🧰 Tech Stack](#-tech-stack)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Getting Started](#-getting-started)
+- [✅ Completed Setup](#-completed-setup)
+- [⚠️ Known Issues & Notes](#️-known-issues--notes)
+- [🧩 ShadCN Component Usage](#-shadcn-component-usage)
+- [🔧 Available Scripts](#-available-scripts)
+- [🎨 Styling](#-styling)
+- [🛣️ Development Roadmap](#️-development-roadmap)
+- [🛠️ Backend Architecture](#️-backend-architecture-upcoming)
+- [📚 Resources](#-resources)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+
+---
+
+## 📦 Overview
+
+**KafKart** is a fully-featured, modern e-commerce platform built using cutting-edge web technologies. This project is currently in its foundation stage, with a robust frontend powered by **Next.js 15**, **ShadCN UI**, and **Tailwind CSS 4**.
+
+The backend will follow a microservices architecture with **Kafka** as the event bus for inter-service communication, ensuring scalability and maintainability.
+
+**Last Updated:** October 23, 2025  
+**Status:** 🚧 In Active Development
+
+---
+
+## ✨ Features
+
+### Current Features (Frontend)
+- ✅ Modern, responsive UI with ShadCN components
+- ✅ Tailwind CSS 4 for utility-first styling
+- ✅ Next.js 15 with App Router and React Server Components
+- ✅ 54 pre-built UI components ready to use
+- ✅ Optimized for mobile and desktop
+- ✅ Dark mode support (via ShadCN theming)
+- ✅ Fast development with Turbopack
+
+### Planned Features
+- 🔄 User authentication (login, signup, OAuth)
+- 🔄 Product listing and filtering
+- 🔄 Shopping cart and wishlist
+- 🔄 Secure checkout with payment integration
+- 🔄 Order tracking and management
+- 🔄 Review and rating system
+- 🔄 Admin dashboard for product and order management
+- 🔄 Real-time notifications with Kafka
+
+---
+
+## 🧰 Tech Stack
+
+| Category | Technology | Version | Purpose |
+|----------|------------|---------|---------|
+| **Frontend** | Next.js | 15.5.6 | App Router, React Server Components |
+| | React | 19.1.0 | UI rendering |
+| | Tailwind CSS | 4.x | Utility-first styling |
+| | ShadCN UI | 3.4.2 | Pre-built component library |
+| **Forms** | React Hook Form | 7.x | Form state management |
+| | Zod | 4.x | Schema validation |
+| **UI/UX** | Embla Carousel | 8.x | Carousels and sliders |
+| | Recharts | 2.x | Data visualization |
+| | Lucide React | Latest | Beautiful SVG icons |
+| **Utilities** | clsx, tailwind-merge | — | Conditional class merging |
+| **Backend (Planned)** | Express, Fastify, Hono.js | — | Microservices |
+| | PostgreSQL, MongoDB | — | Databases |
+| | Kafka | — | Event streaming |
+| | Stripe | — | Payment processing |
+
+---
+
+## 📁 Project Structure
 
 ```
 kafkart/
-├── .next/                    # Next.js build output
-├── node_modules/             # Dependencies
-├── public/                   # Static assets
-│   └── favicon.ico          # Site favicon
+├── public/
+│   └── favicon.ico
 ├── src/
 │   ├── app/
-│   │   ├── globals.css      # Global Tailwind styles
-│   │   ├── layout.js        # Root layout
-│   │   └── page.js          # Homepage
+│   │   ├── globals.css          # Global styles
+│   │   ├── layout.js            # Root layout
+│   │   └── page.js              # Home page
 │   ├── components/
-│   │   └── ui/              # ShadCN UI components (54 files)
+│   │   ├── ui/                  # ShadCN components (54 files)
+│   │   └── custom/              # Custom components
 │   ├── hooks/
-│   │   └── use-mobile.js    # Mobile detection hook
+│   │   └── use-mobile.js        # Mobile detection hook
 │   └── lib/
-│       └── utils.js         # Utility functions (cn helper)
-├── .gitignore
-├── components.json          # ShadCN configuration
-├── jsconfig.json           # JavaScript config
-├── next.config.mjs         # Next.js configuration
-├── package.json            # Project dependencies
-├── postcss.config.mjs      # PostCSS configuration
-├── README.md               # This file
-└── tailwind.config.js      # Tailwind configuration
+│       └── utils.js             # Utility functions (cn, etc.)
+├── components.json               # ShadCN configuration
+├── tailwind.config.js            # Tailwind configuration
+├── next.config.mjs               # Next.js configuration
+├── package.json
+├── README.md
+└── ...other config files
 ```
 
 ---
@@ -57,85 +123,99 @@ kafkart/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ or 20+
-- npm or yarn
+
+- **Node.js** 18+ or 20+
+- **npm** or **yarn** or **pnpm**
 
 ### Installation
 
+1. **Clone the repository**
+
 ```bash
-# Clone the repository
 git clone https://github.com/moarifur/kafkart.git
 cd kafkart
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. **Run the development server**
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+4. **Open your browser**
+
+Visit [http://localhost:3000](http://localhost:3000) to see the app in action!
 
 ---
 
-## ✅ What's Been Done
+## ✅ Completed Setup
 
-### 1. Project Initialization
-- ✅ Next.js 16 with App Router
-- ✅ TypeScript: No (using JavaScript)
-- ✅ Tailwind CSS configured
+### ✔ Frontend Initialization
+- ✅ Next.js 15.5.6 (stable with Tailwind 4 — recommended)
+- ✅ App Router enabled
+- ✅ JavaScript (no TypeScript)
+- ✅ Tailwind CSS 4 fully configured
 - ✅ Turbopack enabled for faster builds
-- ✅ Clean boilerplate code
+- ✅ Clean and organized file structure
 
-### 2. ShadCN UI Setup
-- ✅ ShadCN UI initialized with Neutral color theme
-- ✅ All 54 components installed
-- ✅ Components configured in `src/components/ui/`
+### ✔ ShadCN UI Setup
+- ✅ Installed all 54 components via `npx shadcn@latest add -a`
+- ✅ Configured via `components.json` with **Stone** color theme
+- ✅ All UI components stored in `/src/components/ui/`
 
-**Available Components:** Accordion, Alert, Alert Dialog, Aspect Ratio, Avatar, Badge, Breadcrumb, Button, Button Group, Calendar, Card, Carousel, Chart, Checkbox, Collapsible, Command, Context Menu, Dialog, Drawer, Dropdown Menu, Empty, Field, Form, Hover Card, Input, Input Group, Input OTP, Item, KBD, Label, Menubar, Navigation Menu, Pagination, Popover, Progress, Radio Group, Resizable, Scroll Area, Select, Separator, Sheet, Sidebar, Skeleton, Slider, Sonner (Toast), Spinner, Switch, Table, Tabs, Textarea, Toggle, Toggle Group, Tooltip
+**Available Components:**
+Accordion, Alert, Alert Dialog, Aspect Ratio, Avatar, Badge, Breadcrumb, Button, Button Group, Calendar, Card, Carousel, Chart, Checkbox, Collapsible, Command, Context Menu, Dialog, Drawer, Dropdown Menu, Empty, Field, Form, Hover Card, Input, Input Group, Input OTP, Item, KBD, Label, Menubar, Navigation Menu, Pagination, Popover, Progress, Radio Group, Resizable, Scroll Area, Select, Separator, Sheet, Sidebar, Skeleton, Slider, Sonner (Toast), Spinner, Switch, Table, Tabs, Textarea, Toggle, Toggle Group, Tooltip
 
-### 3. Configuration Files
-- ✅ `components.json` - ShadCN configuration
-- ✅ `tailwind.config.js` - Tailwind CSS setup
-- ✅ `jsconfig.json` - Path aliases configured (`@/*`)
-
-### 4. Utility Setup
-- ✅ `src/lib/utils.js` - CN utility for className merging
-- ✅ `src/hooks/use-mobile.js` - Mobile detection hook
+### ✔ Core Utilities
+- ✅ `use-mobile.js` — mobile viewport detection hook
+- ✅ `utils.js` — `cn()` class merging helper
 
 ---
 
-## 🎯 Planned Features
+## ⚠️ Known Issues & Notes
 
-This is a roadmap of features that will be implemented:
+### ❗ Why Next.js 16 Was Downgraded
 
-### Frontend (Next.js)
-- [ ] Homepage with hero section
-- [ ] Product listing page
-- [ ] Product detail page
-- [ ] Shopping cart functionality
-- [ ] Checkout process
-- [ ] User authentication
-- [ ] Admin dashboard
+**Tailwind CSS 4** grid and responsive utilities break in Next.js 16 due to new compiler changes.
 
-### Backend (To be implemented)
-- [ ] Microservices architecture with Turborepo
-- [ ] Product Service (Express.js + PostgreSQL)
-- [ ] Order Service (Fastify + MongoDB)
-- [ ] Payment Service (Hono.js + Stripe)
-- [ ] Auth Service (Express.js + PostgreSQL)
-- [ ] Kafka integration for event-driven architecture
-- [ ] Email Service (Nodemailer)
+**Issues experienced:**
+- Grid not rendering properly
+- Responsive layout failing
+- CSS hydration mismatches
+- Turbopack CSS pipeline instability
+
+### ✔ Solution
+
+Downgrade to:
+```json
+"next": "15.5.6"
+```
+
+This version is **fully stable** with Tailwind 4 and ShadCN UI, and is the recommended setup for production.
 
 ---
 
-## 📦 ShadCN UI Component Usage
+## 🧩 ShadCN Component Usage
 
-### Basic Example
+### Example Usage
 
 ```jsx
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card"
 
 export default function Example() {
   return (
@@ -152,102 +232,159 @@ export default function Example() {
 }
 ```
 
-### Import Path
-All ShadCN components are imported from `@/components/ui/[component-name]`
+### Import Path Convention
+
+All ShadCN components use the `@/components/ui/` path:
+
+```jsx
+import { ComponentName } from "@/components/ui/component-name"
+```
 
 ---
 
 ## 🔧 Available Scripts
 
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run linting (if configured)
-```
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server with Turbopack |
+| `npm run build` | Build for production |
+| `npm run start` | Run production build |
+| `npm run lint` | Run ESLint (if enabled) |
 
 ---
 
 ## 🎨 Styling
 
-This project uses **Tailwind CSS 4** with the utility-first approach. ShadCN UI components are styled with Tailwind and can be customized through:
+### Tailwind CSS 4 + ShadCN
 
-- `tailwind.config.js` - Tailwind configuration
-- `src/app/globals.css` - Global styles and CSS variables
+- **Utility-first** styling approach
+- Global CSS variables in `globals.css`
+- Theming controlled via `components.json`
+- Responsive design with mobile-first breakpoints
 
----
+### Configuration Files
 
-## 📝 Configuration
+- `tailwind.config.js` — Tailwind configuration
+- `postcss.config.mjs` — PostCSS configuration
+- `globals.css` — Global styles and CSS variables
 
-### ShadCN UI Config (`components.json`)
+### Custom Styling
 
-```json
-{
-  "style": "new-york",
-  "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "src/app/globals.css",
-    "baseColor": "neutral",
-    "cssVariables": true
-  },
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
-  }
-}
-```
+```css
+/* In app/globals.css */
+@import "tailwindcss";
 
-### Import Aliases (`jsconfig.json`)
-
-```json
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+.your-custom-class {
+  /* Your custom styles */
 }
 ```
 
 ---
 
-## 🚧 Development Status
+## 🛣️ Development Roadmap
 
-**Current Phase:** Foundation & Setup  
-**Next Steps:**
-1. Design and implement homepage
-2. Create product listing components
-3. Build shopping cart functionality
-4. Set up backend microservices structure
+### Frontend (In Progress)
+
+- [ ] Homepage with hero section
+- [ ] Product listing page with filters
+- [ ] Product details page
+- [ ] Shopping cart
+- [ ] Wishlist
+- [ ] Checkout flow
+- [ ] User authentication (login/signup)
+- [ ] User dashboard
+- [ ] Admin dashboard
+- [ ] Order tracking UI
+- [ ] Review and rating system
+
+### UI Enhancements
+
+- [ ] Reusable card components
+- [ ] Full mobile responsiveness
+- [ ] Skeleton loading states
+- [ ] Toast notifications
+- [ ] Dialog and modal system
+- [ ] Image optimization
+- [ ] SEO optimization
+
+---
+
+## 🛠️ Backend Architecture (Upcoming)
+
+### Planned Microservices Architecture (Turborepo)
+
+| Service | Tech Stack | Purpose |
+|---------|------------|---------|
+| **Auth Service** | Express + PostgreSQL | User authentication and authorization |
+| **Product Service** | Express + PostgreSQL | Product catalog management |
+| **Order Service** | Fastify + MongoDB | Order processing and management |
+| **Payment Service** | Hono.js + Stripe | Payment processing |
+| **Email Service** | Nodemailer | Email notifications |
+| **Kafka Event Bus** | Apache Kafka | Inter-service communication |
+
+### Architecture Diagram (Planned)
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   Frontend  │────▶│  API Gateway│────▶│Auth Service │
+│  (Next.js)  │     │             │     └─────────────┘
+└─────────────┘     └─────────────┘            │
+                           │                   ▼
+                           │            ┌─────────────┐
+                           │            │   Kafka     │
+                           │            │ Event Bus   │
+                           │            └─────────────┘
+                           │                   │
+                           ▼                   ▼
+                    ┌─────────────┐     ┌─────────────┐
+                    │  Product    │     │   Order     │
+                    │  Service    │     │  Service    │
+                    └─────────────┘     └─────────────┘
+```
 
 ---
 
 ## 📚 Resources
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [ShadCN UI Documentation](https://ui.shadcn.com/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [React Documentation](https://react.dev/)
+- **Next.js Documentation:** [https://nextjs.org](https://nextjs.org)
+- **Tailwind CSS:** [https://tailwindcss.com](https://tailwindcss.com)
+- **ShadCN UI:** [https://ui.shadcn.com](https://ui.shadcn.com)
+- **React Documentation:** [https://react.dev](https://react.dev)
+- **React Hook Form:** [https://react-hook-form.com](https://react-hook-form.com)
+- **Zod:** [https://zod.dev](https://zod.dev)
+- **Lucide Icons:** [https://lucide.dev](https://lucide.dev)
 
 ---
 
 ## 🤝 Contributing
 
-This is a learning/development project. Contributions and suggestions are welcome!
+This project is primarily for **learning** and **portfolio** purposes.
+
+However, suggestions, pull requests, and discussions are **welcome!**
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is for educational/portfolio purposes.
+This project is open for **personal** and **educational** use.
+
+For commercial use, please contact the maintainer.
 
 ---
 
-## 🔗 Links
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/moarifur">moarifur</a>
+</p>
 
-- **Repository:** [https://github.com/moarifur/kafkart.git](https://github.com/moarifur/kafkart.git)
-- **Issues:** Open an issue for bugs or feature requests
-
----
-
-**Note:** This project is in active development. Features and documentation will be updated as development progresses.
+<p align="center">
+  <a href="https://github.com/moarifur/kafkart/issues">Report Bug</a> ·
+  <a href="https://github.com/moarifur/kafkart/issues">Request Feature</a>
+</p>
