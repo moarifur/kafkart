@@ -1,19 +1,4 @@
-/*================================================================================================================
-* ✅ Server Component
-* (1) Data => Inline
-* (2) Content => (i) Section 1: Brand logo and copyright
-*               (ii) Section 2: Navigation links (Homepage, Contact, Terms, Privacy, etc.)
-*              (iii) Section 3: Product-related shortcuts
-*               (iv) Section 4: Company-related pages
-*
-* (3) Layout => (i) Section 1: Brand name is visible only on medium screens (hidden md:block).
-*              (ii) Section 2: Organized in a clean vertical list, Section heading uses amber color to stand out and Uses Next.js Link for seamless navigation.
-*             (iii) Section 3: Provides quick access to product-related sections and Shares the same structure and styling as the previous section for visual consistency.
-*              (iv) Section 4: Contains links to important company pages such as About, Blog, and Affiliate Program and Shares the same structure and styling as the previous section for visual consistency.
-* ================================================================================================================*/
-
-
-
+import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 

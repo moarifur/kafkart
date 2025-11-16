@@ -1,39 +1,4 @@
-/*================================================================================================================
-* ✅ Navbar Component
- * Purpose: Full top navigation for e-commerce platform
- * Structure:
- * - Left: Logo + Brand Name
- * - Right: SearchBar + Icons (Home, Notifications, Cart) + Sign In link
- *
- * Features:
- * 1. Responsive design (SearchBar hidden on small screens)
- * 2. Optimized images via Next.js Image component
- * 3. Client-side routing with Link
- * 4. Consistent icon styling and spacing
- * 5. Accessible with aria-labels for icons
- *
- * Data => Inline
- * Layout => TODO:
-*                | ------------------ | --------------------------------------- |
-*                | Screen Size        | What Shows                              |
-*                | ------------------ | --------------------------------------- |
-*                | Mobile             | Logo + Icons + Sign-in (Search hidden)  |
-*                | Tablet/Desktop     | Logo + Brand + Search + Icons + Sign-in |
-*                | ------------------ | --------------------------------------- |
-
- * Content =>
-Navbar
-├── Logo (Image)
-├── Brand Name
-└── Right Section
-    ├── SearchBar
-    ├── Home Icon
-    ├── Notification Icon
-    ├── Cart Icon
-    └── Sign In
-
-* ================================================================================================================*/
-
+import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import SearchBar from "@/components/custom/SearchBar";
