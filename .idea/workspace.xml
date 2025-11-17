@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c911fd6f-0db1-4e35-93be-31b1648846f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/custom/product/Categories.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/custom/product/ProductList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/custom/product/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/custom/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/custom/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom/Navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,15 +33,20 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/moarifur/Music/kafkart/src/components/custom&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\moarifur\Music\kafkart\src\components\custom" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\moarifur\Music\kafkart\src\components\custom" />
     </key>
@@ -62,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763255339858</updated>
       <workItem from="1763255342222" duration="9495000" />
+      <workItem from="1763368768886" duration="3428000" />
     </task>
     <servers />
   </component>

@@ -31,11 +31,13 @@
 * ================================================================================================================*/
 
 import Hero from "@/components/custom/Hero";
+import ProductList from "@/components/custom/product/ProductList";
 
 const HomePage = () => {
     return (
         <div className="">
             <Hero />
+            <ProductList />
         </div>
     );
 };
